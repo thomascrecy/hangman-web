@@ -1,0 +1,41 @@
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="static/styles.css">
+    </head>
+    <body>
+      <div class="logo-container">
+        <img class="logo" src="static\logo hard.png" alt="Your Logo">
+      </div>
+
+      <div class="gameContainer">
+        <div class="RowContainer">
+          <div class="ColumnContainer userInput">
+            <h2>Essais: {{.Attempts}}</h2>
+            <h2>Mot: {{.Word}}</h2>
+            <form action="/hangmanHard" method="POST">
+                <label for="input">Entrez une lettre:</label>
+                <input id="inputBox" name="input" type="text" minlength="1" autofocus required/>
+                <input type="submit" value=">"/>
+            </form>
+          </div>
+
+          <div class="vl" style="flex: 1;">
+            <div></div>
+          </div>
+          
+          <h1 class="hangmanDraw"><pre>{{.HangmanDraw}}</pre></h1>
+        </div>
+      </div>
+
+      <div class="button-container">
+        <form action="/resetHard" method="POST">
+          <button type="submit">Réinitialiser ↻</button>
+        </form>
+        <form action="/" method="get">
+            <button type="submit">Retour à la homepage</button>
+        </form>
+      </div>
+    </body>
+    </html>

@@ -1,0 +1,317 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+:root{
+  --font-color: rgb(251, 255, 255);
+  --background-color: rgb(36, 35, 35);
+  --grey-color: rgb(78, 74, 74);
+}
+
+/*=== Basics ===*/
+body {
+  background-color: var(--background-color);
+  text-align: center;
+  font-family: HelveticaNeue, 'Helvetica Neue', 'Lucida Grande', Arial, sans-serif;
+  color: var(--font-color);
+}
+
+
+h1 {
+  color: var(--font-color);
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+span {
+  line-height: 9px;
+  vertical-align: 50%;
+}
+
+button {
+  font-size: 18px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 50%;
+  border: 2px var(--font-color) solid;
+  border-radius: 8px;
+  background-color: var(--grey-color);
+  color: var(--font-color);
+  transition: width 0.2s;
+}
+
+button:hover {
+  width: 51%;
+  cursor: pointer;
+}
+/*=== Basics FIN ===*/
+
+
+
+/*=== Globals ===*/
+.logo-container {
+  width: 100%;
+  position: relative;
+  margin-top: 45px;
+}
+
+.logo {
+  width: 25%;
+  height: auto;
+}
+
+.button-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(36, 35, 35);
+  padding: 10px;
+}
+
+/*= Fake Windows =*/
+.window {
+  background: #fff;
+  width: 50vw;
+  height: auto;
+  margin: auto;
+  margin-top: 10vh;
+  border: 1px solid #acacac;
+  border-radius: 6px;
+  box-shadow: 0px 0px 20px #acacac;
+}
+
+.titlebar {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.0, #ebebeb, color-stop(1.0, #d5d5d5)));
+  background: -webkit-linear-gradient(top, #ebebeb, #d5d5d5);
+  background: -moz-linear-gradient(top, #ebebeb, #d5d5d5);
+  background: -ms-linear-gradient(top, #ebebeb, #d5d5d5);
+  background: -o-linear-gradient(top, #ebebeb, #d5d5d5);
+  background: linear-gradient(top, #ebebeb, #d5d5d5);
+  color: #4d494d;
+  font-size: 11pt;
+  line-height: 20px;
+  text-align: right;
+  width: 100%;
+  height: 20px;
+  border-top: 1px solid #f3f1f3;
+  border-bottom: 1px solid #b1aeb1;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  cursor: default;
+}
+
+.buttons {
+  padding-left: 8px;
+  padding-top: 3px;
+  float: left;
+  line-height: 0px;
+}
+
+.close {
+  background: #ff5c5c;
+  font-size: 9pt;
+  width: 11px;
+  height: 11px;
+  border: 1px solid #e33e41;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.closebutton {
+  color: #820005;
+  visibility: hidden;
+  cursor: default;
+}
+
+.minimize {
+  background: #ffbd4c;
+  font-size: 9pt;
+  line-height: 11px;
+  margin-left: 4px;
+  width: 11px;
+  height: 11px;
+  border: 1px solid #e09e3e;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.minimizebutton {
+  color: #9a5518;
+  visibility: hidden;
+  cursor: default;
+}
+
+.zoom {
+  background: #00ca56;
+  font-size: 9pt;
+  line-height: 11px;
+  margin-left: 6px;
+  width: 11px;
+  height: 11px;
+  border: 1px solid #14ae46;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.zoombutton {
+  color: #006519;
+  visibility: hidden;
+  cursor: default;
+}
+/*===*/
+/*=== Globals FIN ===*/
+
+
+
+/*=== HangMans ===*/
+.hangmanDraw{
+  white-space: pre;
+  margin-bottom: 150px;
+}
+
+.vl {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.vl > *{
+  border-left: 6px solid rgb(255, 255, 255);
+  height: 500px;
+}
+
+
+.RowContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.RowContainer > *{
+  flex: 3;
+}
+
+.ColumnContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameContainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 1.5em;
+}
+
+.gameContainer form{
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gameContainer input[type=text]{
+  margin-left: 10px;
+  padding: 7px 2px;
+  font-size: large;
+}
+.gameContainer input[type=submit]{
+  font-size: 1.3em;
+  cursor: pointer;
+  padding: 0 10px;
+  background-color: var(--font-color);
+  border: none;
+}
+
+.gameContainer>.RowContainer{
+  width: 75%;
+}
+
+.gameContainer .userInput{
+  margin-bottom: 150px;
+}
+/*=== HangMan FIN ===*/
+
+
+
+/*=== Index ===*/
+/*= Boutons menu =*/
+.content {
+  padding: 10px;
+}
+.content button {
+  padding: 20px;
+  width: 100%;
+}
+.content button:hover {
+  padding: 20px;
+  width: 99%;
+}
+/*=== Index FIN ===*/
+
+
+
+/*=== EndGame (Winning & Losing)===*/
+.endgame h1{
+  font-size: 3em;
+  color: rgb(251, 255, 255);
+  text-align: center;
+}
+
+.endgame h3 {
+  font-size: 2em;
+  color: rgb(251, 255, 255);
+  text-align: center;
+}
+
+.userAddScore{
+  margin-top: 50px;
+  font-size: 2em;
+  padding: 20px 30px;
+
+  border: 2px white solid;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.userAddScore *{
+  margin: 5px 0;
+  padding: 8px 0;
+}
+.userAddScore input[type=text]{
+  width: 100%;
+}
+.userAddScore button{
+  width: 80%;
+}
+/*=== EndGame FIN ===*/
+
+
+
+/*=== Leaderboard ===*/
+.box {
+  color: black;
+  background-color: wheat;
+  width: auto;
+  padding: 15px;
+  border: 1px solid rgb(36, 35, 35);
+  display: block;
+  margin-bottom: 5px;
+}
+/*=== Leaderboard FIN ===*/

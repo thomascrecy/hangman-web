@@ -1,0 +1,35 @@
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="static/styles.css">
+    </head>
+    <body>
+      <div class="logo-container">
+        <img class="logo" src="static\logo.png" alt="Logo Hangman">
+      </div>
+      <h1>Leaderboard</h1>
+      <div class="window">
+        <div class="titlebar">
+          <div class="buttons">
+            <div class="close">
+            </div>
+            <div class="minimize">
+            </div>
+            <div class="zoom">
+            </div>
+          </div>
+          <!-- window title -->
+        </div>
+        <div class="content">
+          {{.Leaderboard}}
+        </div>
+      </div>
+      
+      <div class="button-container">
+        <form action="/" method="get">
+            <button type="submit">Retour à la homepage</button>
+        </form>
+      </div>
+    </body>
+    </html>
